@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#eef2f8">
+<title>Quỹ Xiaomi · Điểm danh tiết kiệm</title>
+<style>
+:root{--ink:#182033;--muted:#778198;--glass:rgba(255,255,255,.58);--line:rgba(255,255,255,.78);--blue:#4778f5;--green:#2dbb86;--shadow:0 18px 55px rgba(68,86,130,.13)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;background:radial-gradient(ellipse at 15% 5%,#fff 0,transparent 36%),radial-gradient(ellipse at 90% 20%,#dce7ff 0,transparent 34%),linear-gradient(145deg,#edf2fa,#e7ecf6 55%,#f6f7fb);background-attachment:fixed}
+button,input{font:inherit}button{cursor:pointer;border:0}.app{max-width:650px;margin:0 auto;padding:26px 18px 44px}.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}.brand{display:flex;align-items:center;gap:10px;font-weight:750;letter-spacing:-.4px}.logo{width:42px;height:42px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(145deg,rgba(255,255,255,.95),rgba(210,225,255,.65));box-shadow:inset 0 1px 0 #fff,0 6px 18px #b7c7e955;font-size:20px}.pill{font-size:12px;color:#65718a;padding:8px 12px;border:1px solid #ffffffad;border-radius:99px;background:#ffffff68;backdrop-filter:blur(20px)}
+h1{font-size:clamp(29px,7vw,40px);letter-spacing:-1.4px;line-height:1.08;margin:0 0 9px;font-weight:780}.sub{color:var(--muted);font-size:14px;line-height:1.5;margin:0 0 22px}.glass{background:var(--glass);border:1px solid var(--line);box-shadow:var(--shadow),inset 0 1px 0 #ffffffc9;backdrop-filter:blur(28px) saturate(1.4);-webkit-backdrop-filter:blur(28px) saturate(1.4);border-radius:27px}
+.hero{padding:22px;margin-bottom:15px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:170px;height:170px;right:-70px;top:-90px;border-radius:50%;background:#a7c0ff50;filter:blur(4px);pointer-events:none}.hero-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:1.4px;font-weight:750;color:#77839d;margin-bottom:8px}.total{font-size:clamp(30px,8vw,42px);letter-spacing:-1.6px;font-weight:790;line-height:1.1}.goal{font-size:13px;color:var(--muted);margin-top:7px}.phone{width:74px;height:92px;flex-shrink:0;display:grid;place-items:center;font-size:44px;border-radius:23px;background:linear-gradient(145deg,#ffffffd9,#dfe8ff9c);box-shadow:inset 0 1px 0 white,0 8px 22px #9eafe533;transform:rotate(5deg)}.progressline{height:10px;border-radius:20px;background:#dce3f2a8;margin:21px 0 10px;overflow:hidden;box-shadow:inset 0 1px 3px #9caaca33}.progress{height:100%;width:0%;border-radius:inherit;background:linear-gradient(90deg,#7aa4ff,#4778f5 70%,#7bc8ff);transition:width .6s cubic-bezier(.2,.8,.2,1);box-shadow:0 0 14px #6d9aff88}.stats{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:12px}.stats strong{color:var(--ink)}
+.summary{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}.mini{padding:16px 17px;border-radius:22px}.mini-label{color:var(--muted);font-size:12px;margin-bottom:8px}.mini-val{font-size:21px;font-weight:750;letter-spacing:-.5px}.mini-icon{float:right;font-size:19px}
+.sectionhead{display:flex;align-items:flex-end;justify-content:space-between;margin:23px 2px 12px;gap:12px}.sectionhead h2{font-size:20px;letter-spacing:-.5px;margin:0}.sectionhead p{font-size:12px;color:var(--muted);margin:5px 0 0}.daycount{font-size:12px;color:#5b76ba;background:#e2eaffad;border:1px solid #ffffffb8;padding:7px 10px;border-radius:99px;white-space:nowrap}
+.list-shell{overflow:hidden;padding:8px}.day-list{max-height:380px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#aabbe9 transparent;padding:3px 3px 7px;scroll-behavior:smooth}.day-list::-webkit-scrollbar{width:5px}.day-list::-webkit-scrollbar-thumb{background:#aabbe9a8;border-radius:9px}.day{display:grid;grid-template-columns:42px minmax(0,1fr) auto;gap:12px;align-items:center;padding:13px 10px;margin:3px 0;border-radius:19px;background:#ffffff51;border:1px solid #ffffff8a;transition:transform .28s cubic-bezier(.2,.8,.2,1),background .2s,opacity .2s;animation:rise .35s both}.day:hover{background:#ffffffa1;transform:translateY(-1px)}.day.done{background:#e9f9f2a8;border-color:#c4efdf}.day.no-money{background:#f5f6fa9c}.day-badge{width:42px;height:46px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,#fff,#e6edff);color:#5274ca;font-size:12px;font-weight:800;box-shadow:inset 0 1px 0 #fff}.done .day-badge{background:linear-gradient(145deg,#e3fff3,#c6f2df);color:#20966b}.day-title{font-size:14px;font-weight:750;margin-bottom:4px}.day-note{font-size:11px;color:var(--muted)}.day-amount{font-size:13px;font-weight:750;text-align:right;white-space:nowrap}.day-status{font-size:10px;font-weight:650;color:#269c71;margin-top:4px;text-align:right}.day.no-money .day-status{color:#8992a5}.day-action{display:flex;gap:6px;align-items:center}.smallbtn{padding:9px 10px;border-radius:12px;background:#ffffffc9;border:1px solid #ffffff;color:#4c5d7e;font-size:11px;font-weight:700;box-shadow:0 3px 9px #8394b41a;transition:transform .15s}.smallbtn:active,.primary:active{transform:scale(.96)}.smallbtn.yes{background:linear-gradient(135deg,#6e99ff,#4778f5);color:white;border:0}.smallbtn.no{background:#f0f2f8c9}.day.locked{opacity:.65}.day.locked .day-action{display:none}.future{padding:17px 13px;text-align:center;font-size:12px;color:#8993a9;border:1px dashed #c9d4e8;border-radius:18px;margin:7px 0 2px;background:#ffffff31}
+.empty{padding:28px 15px;text-align:center;color:var(--muted);font-size:13px}.footer{text-align:center;color:#8c95a8;font-size:11px;margin:22px 0 0}
+.modal-backdrop{position:fixed;inset:0;background:#1b274744;backdrop-filter:blur(9px);display:none;align-items:center;justify-content:center;padding:20px;z-index:10}.modal-backdrop.show{display:flex;animation:fade .18s}.modal{width:min(100%,390px);padding:23px;border-radius:28px;background:rgba(248,250,255,.88);border:1px solid white;box-shadow:0 24px 80px #17264b35;backdrop-filter:blur(32px);animation:rise .25s}.modal h3{font-size:22px;margin:0 0 7px;letter-spacing:-.5px}.modal p{font-size:13px;color:var(--muted);margin:0 0 19px}.fieldlabel{font-size:12px;color:#5d6880;font-weight:700;display:block;margin-bottom:8px}.moneyfield{width:100%;border:1px solid #dce4f5;background:#ffffffc9;border-radius:16px;padding:15px;font-size:21px;font-weight:700;color:var(--ink);outline:none;box-shadow:inset 0 1px 3px #9daaca16}.moneyfield:focus{border-color:#88a8ff;box-shadow:0 0 0 4px #7fa1ff22}.modal-actions{display:flex;gap:9px;margin-top:17px}.modal-actions button{flex:1;padding:13px;border-radius:15px;font-weight:750;font-size:13px}.cancel{background:#e9edf6;color:#58647d}.primary{background:linear-gradient(135deg,#729aff,#4778f5);color:white;box-shadow:0 7px 17px #4778f52e}.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#202b42eF;color:#fff;padding:12px 16px;border-radius:14px;font-size:12px;box-shadow:0 10px 30px #17264b33;transition:.25s;z-index:20;white-space:nowrap}.toast.show{opacity:1;transform:translate(-50%,0)}
+@keyframes rise{from{opacity:0;transform:translateY(9px) scale(.99)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes fade{from{opacity:0}to{opacity:1}}
+@media(min-width:560px){.app{padding-top:38px}.day-list{max-height:440px}.hero{padding:27px}.day{padding:14px 13px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<main class="app">
+  <div class="top"><div class="brand"><div class="logo">✦</div><span>Quỹ của tôi</span></div><div class="pill">LIQUID GLASS · 01</div></div>
+  <h1>Mỗi ngày một chút.<br>Chạm tới Xiaomi.</h1>
+  <p class="sub">Điểm danh tiết kiệm mỗi ngày để dành cho chiếc Redmi Note 15 Pro 5G của bạn.</p>
+
+  <section class="glass hero">
+    <div class="hero-head"><div><div class="eyebrow">Tổng tiền đã góp</div><div class="total" id="total">0 ₫</div><div class="goal">Mục tiêu quỹ: <strong>8.000.000 ₫</strong></div></div><div class="phone" aria-hidden="true">📱</div></div>
+    <div class="progressline"><div class="progress" id="progress"></div></div>
+    <div class="stats"><span id="percent">0% hoàn thành</span><span>Còn <strong id="remaining">8.000.000 ₫</strong></span></div>
+  </section>
+
+  <section class="summary">
+    <div class="glass mini"><span class="mini-icon">📅</span><div class="mini-label">Ngày đã điểm danh</div><div class="mini-val" id="daysDone">0 ngày</div></div>
+    <div class="glass mini"><span class="mini-icon">✨</span><div class="mini-label">Trung bình mỗi ngày</div><div class="mini-val" id="average">0 ₫</div></div>
+  </section>
+
+  <div class="sectionhead"><div><h2>Hành trình tiết kiệm</h2><p>Góp tiền hoặc chọn “Không” cho hôm nay.</p></div><div class="daycount" id="dayCount">Ngày 1</div></div>
+  <section class="glass list-shell">
+    <div class="day-list" id="dayList" aria-label="Danh sách ngày tiết kiệm"></div>
+  </section>
+  <div class="footer">Dữ liệu được lưu trên trình duyệt này · Made for your next phone ✦</div>
+</main>
+
+<div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <form class="modal" id="moneyForm">
+    <h3 id="modalTitle">Hôm nay bạn góp bao nhiêu?</h3>
+    <p id="modalSub">Mọi khoản nhỏ đều đưa bạn gần mục tiêu hơn.</p>
+    <label class="fieldlabel" for="moneyInput">Số tiền (VNĐ)</label>
+    <input class="moneyfield" id="moneyInput" inputmode="numeric" autocomplete="off" placeholder="Ví dụ: 20.000" required>
+    <div class="modal-actions"><button class="cancel" type="button" id="cancelModal">Hủy</button><button class="primary" type="submit">Lưu ngày này</button></div>
+  </form>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+(() => {
+  const GOAL = 8000000;
+  const KEY = 'xiaomi_savings_attendance_v1';
+  const $ = id => document.getElementById(id);
+  let data = loadData();
+  let selectedDay = null;
+  let toastTimer;
+
+  function loadData() {
+    try {
+      const raw = JSON.parse(localStorage.getItem(KEY) || '{}');
+      return raw && typeof raw === 'object' && raw.days && typeof raw.days === 'object' ? raw : {days:{}};
+    } catch { return {days:{}}; }
+  }
+  function save() {
+    try { localStorage.setItem(KEY, JSON.stringify(data)); }
+    catch { showToast('Không thể lưu dữ liệu trên trình duyệt này.'); }
+  }
+  function money(n) {
+    return new Intl.NumberFormat('vi-VN', {maximumFractionDigits:0}).format(n) + ' ₫';
+  }
+  function currentDay() {
+    const entries = Object.keys(data.days).map(Number).filter(n => Number.isInteger(n) && n > 0);
+    let day = 1;
+    while (data.days[day] && (data.days[day].status === 'saved' || data.days[day].status === 'no')) day++;
+    return day;
+  }
+  function stats() {
+    const entries = Object.values(data.days).filter(x => x && (x.status === 'saved' || x.status === 'no'));
+    const total = entries.reduce((sum,x) => sum + (x.status === 'saved' ? Math.max(0, Number(x.amount)||0) : 0), 0);
+    const count = entries.length;
+    const paidDays = entries.filter(x => x.status === 'saved' && Number(x.amount)>0).length;
+    const percent = Math.min(100, total / GOAL * 100);
+    $('total').textContent = money(total);
+    $('progress').style.width = percent + '%';
+    $('percent').textContent = (percent >= 10 ? percent.toFixed(1) : percent.toFixed(2)).replace(/\.0$/,'') + '% hoàn thành';
+    $('remaining').textContent = money(Math.max(0, GOAL-total));
+    $('daysDone').textContent = count + (count === 1 ? ' ngày' : ' ngày');
+    $('average').textContent = money(count ? Math.round(total/count) : 0);
+    $('dayCount').textContent = 'Ngày ' + currentDay();
+  }
+  function render() {
+    stats();
+    const list = $('dayList');
+    const next = currentDay();
+    const visible = Math.max(7, Math.min(10, next + 2));
+    list.innerHTML = '';
+    for (let day=1; day<=visible; day++) {
+      const entry = data.days[day];
+      const isNext = day === next;
+      const done = entry && (entry.status === 'saved' || entry.status === 'no');
+      const row = document.createElement('article');
+      row.className = 'day' + (entry?.status === 'saved' ? ' done' : '') + (entry?.status === 'no' ? ' no-money' : '') + (!done && !isNext ? ' locked' : '');
+      row.style.animationDelay = Math.min(day,8)*22 + 'ms';
+      const badge = document.createElement('div'); badge.className='day-badge'; badge.textContent=String(day).padStart(2,'0');
+      const info = document.createElement('div');
+      const title = document.createElement('div'); title.className='day-title'; title.textContent = 'Ngày ' + day;
+      const note = document.createElement('div'); note.className='day-note';
+      if (entry?.status === 'saved') note.textContent = entry.amount > 0 ? 'Đã ghi nhận khoản tiết kiệm' : 'Đã điểm danh';
+      else if (entry?.status === 'no') note.textContent = 'Hôm nay chưa có khoản góp';
+      else if (isNext) note.textContent = 'Đang chờ bạn điểm danh';
+      else note.textContent = 'Sẽ mở sau ngày trước';
+      info.append(title,note);
+      const action = document.createElement('div'); action.className='day-action';
+      if (done) {
+        const amount = document.createElement('div'); amount.className='day-amount';
+        amount.textContent = entry.status === 'saved' ? money(entry.amount) : '0 ₫';
+        const status = document.createElement('div'); status.className='day-status'; status.textContent = entry.status === 'saved' ? '✓ Đã góp' : '— Không góp';
+        const stack = document.createElement('div'); stack.append(amount,status);
+        action.append(stack);
+        // Allow correcting a day without changing the one-at-a-time progression.
+        const edit = document.createElement('button'); edit.className='smallbtn'; edit.type='button'; edit.textContent='Sửa';
+        edit.setAttribute('aria-label','Sửa số tiền ngày '+day);
+        edit.addEventListener('click',()=>openModal(day));
+        action.append(edit);
+      } else if (isNext) {
+        const yes = document.createElement('button'); yes.className='smallbtn yes'; yes.type='button'; yes.textContent='＋ Góp';
+        yes.addEventListener('click',()=>openModal(day));
+        const no = document.createElement('button'); no.className='smallbtn no'; no.type='button'; no.textContent='Không';
+        no.addEventListener('click',()=>markNo(day));
+        action.append(yes,no);
+      } else {
+        const wait = document.createElement('div'); wait.className='day-status'; wait.textContent='Chờ mở khóa'; action.append(wait);
+      }
+      row.append(badge,info,action); list.append(row);
+    }
+    const future = document.createElement('div'); future.className='future';
+    future.textContent = '✦ Ngày tiếp theo sẽ xuất hiện khi bạn hoàn tất ngày ' + next + '.';
+    list.append(future);
+  }
+  function openModal(day) {
+    selectedDay = day;
+    $('modalTitle').textContent = 'Tiết kiệm · Ngày ' + day;
+    $('modalSub').textContent = 'Nhập số tiền bạn đã dành ra hôm nay.';
+    const old = data.days[day];
+    $('moneyInput').value = old?.status === 'saved' ? String(old.amount) : '';
+    $('modalBackdrop').classList.add('show');
+    setTimeout(()=>$('moneyInput').focus(),60);
+  }
+  function closeModal() {
+    $('modalBackdrop').classList.remove('show');
+    selectedDay = null;
+  }
+  function markNo(day) {
+    data.days[day] = {status:'no', amount:0, updatedAt:new Date().toISOString()};
+    save(); render(); showToast('Đã ghi nhận ngày không góp tiền.');
+    const list = $('dayList'); list.scrollTo({top:list.scrollHeight,behavior:'smooth'});
+  }
+  $('moneyInput').addEventListener('input', e => {
+    const digits = e.target.value.replace(/\D/g,'');
+    e.target.value = digits ? new Intl.NumberFormat('vi-VN').format(Number(digits)) : '';
+  });
+  $('moneyForm').addEventListener('submit', e => {
+    e.preventDefault();
+    if (selectedDay === null) return;
+    const amount = Number($('moneyInput').value.replace(/\D/g,''));
+    if (!Number.isSafeInteger(amount) || amount < 0) { showToast('Hãy nhập số tiền hợp lệ.'); return; }
+    data.days[selectedDay] = {status:'saved', amount, updatedAt:new Date().toISOString()};
+    save(); const day = selectedDay; closeModal(); render();
+    showToast('Đã lưu ngày ' + day + ' · +' + money(amount));
+    const list = $('dayList'); list.scrollTo({top:list.scrollHeight,behavior:'smooth'});
+  });
+  $('cancelModal').addEventListener('click',closeModal);
+  $('modalBackdrop').addEventListener('click',e=>{if(e.target===$('modalBackdrop'))closeModal();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+  function showToast(message) {
+    const el=$('toast'); el.textContent=message; el.classList.add('show');
+    clearTimeout(toastTimer); toastTimer=setTimeout(()=>el.classList.remove('show'),2400);
+  }
+  // Pointer-based inertial scrolling for a soft, kinetic feel on touch and trackpads.
+  const scroller = $('dayList');
+  let lastY=0,lastT=0,velocity=0,raf=0;
+  scroller.addEventListener('touchstart',e=>{if(e.touches.length){lastY=e.touches[0].clientY;lastT=performance.now();velocity=0;}},{passive:true});
+  scroller.addEventListener('touchmove',e=>{if(e.touches.length){const now=performance.now(),y=e.touches[0].clientY,dt=Math.max(1,now-lastT);velocity=(lastY-y)/dt;lastY=y;lastT=now;}},{passive:true});
+  scroller.addEventListener('touchend',()=>{
+    cancelAnimationFrame(raf);
+    let v=velocity*16;
+    const tick=()=>{if(Math.abs(v)<.25)return;scroller.scrollTop+=v;v*=.92;raf=requestAnimationFrame(tick);};
+    raf=requestAnimationFrame(tick);
+  },{passive:true});
+  render();
+})();
+</script>
+</body>
+</html>
