@@ -18,31 +18,47 @@ h1{font-size:clamp(29px,7vw,40px);letter-spacing:-1.4px;line-height:1.08;margin:
 .modal-backdrop{position:fixed;inset:0;background:#1b274744;backdrop-filter:blur(9px);display:none;align-items:center;justify-content:center;padding:20px;z-index:10}.modal-backdrop.show{display:flex;animation:fade .18s}.modal{width:min(100%,390px);padding:23px;border-radius:28px;background:rgba(248,250,255,.88);border:1px solid white;box-shadow:0 24px 80px #17264b35;backdrop-filter:blur(32px);animation:rise .25s}.modal h3{font-size:22px;margin:0 0 7px;letter-spacing:-.5px}.modal p{font-size:13px;color:var(--muted);margin:0 0 19px}.fieldlabel{font-size:12px;color:#5d6880;font-weight:700;display:block;margin-bottom:8px}.moneyfield{width:100%;border:1px solid #dce4f5;background:#ffffffc9;border-radius:16px;padding:15px;font-size:21px;font-weight:700;color:var(--ink);outline:none;box-shadow:inset 0 1px 3px #9daaca16}.moneyfield:focus{border-color:#88a8ff;box-shadow:0 0 0 4px #7fa1ff22}.modal-actions{display:flex;gap:9px;margin-top:17px}.modal-actions button{flex:1;padding:13px;border-radius:15px;font-weight:750;font-size:13px}.cancel{background:#e9edf6;color:#58647d}.primary{background:linear-gradient(135deg,#729aff,#4778f5);color:white;box-shadow:0 7px 17px #4778f52e}.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#202b42eF;color:#fff;padding:12px 16px;border-radius:14px;font-size:12px;box-shadow:0 10px 30px #17264b33;transition:.25s;z-index:20;white-space:nowrap}.toast.show{opacity:1;transform:translate(-50%,0)}
 @keyframes rise{from{opacity:0;transform:translateY(9px) scale(.99)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes fade{from{opacity:0}to{opacity:1}}
 @media(min-width:560px){.app{padding-top:38px}.day-list{max-height:440px}.hero{padding:27px}.day{padding:14px 13px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Liquid Glass navigation, tactile feedback and themes */
+body{padding-bottom:112px;transition:background .45s,color .35s}.app{padding-bottom:22px}.tab-panel{display:none;animation:panelIn .38s cubic-bezier(.2,.8,.2,1) both}.tab-panel.active{display:block}@keyframes panelIn{from{opacity:0;transform:translateY(13px) scale(.99);filter:blur(2px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+.taskbar{position:fixed;z-index:8;left:50%;bottom:max(14px,env(safe-area-inset-bottom));transform:translateX(-50%);width:min(440px,calc(100% - 28px));display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:7px;border-radius:25px;background:rgba(255,255,255,.58);border:1px solid rgba(255,255,255,.86);box-shadow:0 14px 45px #29395b2b,inset 0 1px 0 #fff;backdrop-filter:blur(32px) saturate(1.65);-webkit-backdrop-filter:blur(32px) saturate(1.65);isolation:isolate}
+.taskbar-indicator{position:absolute;z-index:-1;top:7px;bottom:7px;left:7px;width:calc((100% - 14px - 8px)/3);border-radius:19px;background:linear-gradient(145deg,#ffffffdd,#dbe6ffb8);border:1px solid #ffffffdb;box-shadow:0 5px 16px #6687d51f,inset 0 1px 0 white;transition:transform .48s cubic-bezier(.2,.85,.25,1.25),background .35s;pointer-events:none}
+.tab-button{min-height:54px;border-radius:18px;background:transparent;color:#73809a;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11px;font-weight:700;transition:transform .22s cubic-bezier(.2,.8,.2,1),color .25s;position:relative;touch-action:manipulation}.tab-button .tab-icon{font-size:20px;line-height:21px}.tab-button.active{color:#345fc6}.tab-button:active{transform:scale(.88) translateY(1px)}button:active,.setting-card:active{transition-duration:.08s}.tap-bump{animation:bump .32s cubic-bezier(.2,.8,.2,1)}@keyframes bump{0%{transform:scale(1)}38%{transform:scale(.94)}72%{transform:scale(1.025)}100%{transform:scale(1)}}
+.setting-card{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px;margin:0 0 12px;border-radius:23px}.setting-copy{display:flex;flex-direction:column;gap:5px}.setting-copy strong{font-size:14px}.setting-copy span,.progress-note p{font-size:12px;color:var(--muted);line-height:1.5}.setting-icon{font-size:20px}.theme-switch{display:flex;gap:4px;padding:4px;border-radius:15px;background:#dfe6f4a8}.theme-choice{padding:9px 10px;border-radius:11px;background:transparent;color:var(--muted);font-size:11px;font-weight:750;white-space:nowrap;transition:transform .2s,background .25s}.theme-choice.active{background:#ffffffdd;color:#3d64c5;box-shadow:0 2px 8px #43577c18}.toggle{position:relative;display:inline-flex;flex-shrink:0}.toggle input{position:absolute;opacity:0;width:1px;height:1px}.toggle-track{width:47px;height:28px;border-radius:99px;background:#c7cedc;box-shadow:inset 0 1px 3px #69758a33;transition:background .25s;position:relative}.toggle-track:after{content:"";position:absolute;width:22px;height:22px;left:3px;top:3px;border-radius:50%;background:white;box-shadow:0 2px 6px #1d2b472e;transition:transform .28s cubic-bezier(.2,.8,.2,1.2)}.toggle input:checked+.toggle-track{background:#638af5}.toggle input:checked+.toggle-track:after{transform:translateX(19px)}.progress-note{padding:19px;border-radius:23px}.progress-note h2{font-size:19px;margin:5px 0}.progress-note p{margin:0}
+body[data-theme="dark"]{--ink:#f1f4fc;--muted:#a7b0c5;--glass:rgba(32,40,60,.68);--line:rgba(255,255,255,.13);--shadow:0 18px 55px rgba(0,0,0,.23);background:radial-gradient(ellipse at 15% 5%,#27344d 0,transparent 36%),radial-gradient(ellipse at 90% 20%,#202e4b 0,transparent 34%),linear-gradient(145deg,#111827,#171f30 55%,#101622);color:var(--ink)}body[data-theme="dark"] .pill,body[data-theme="dark"] .taskbar{background:rgba(26,34,51,.74);border-color:#ffffff20;color:#c1cbe0}body[data-theme="dark"] .taskbar-indicator{background:linear-gradient(145deg,#42516cdd,#293750e8);border-color:#ffffff20}body[data-theme="dark"] .tab-button{color:#a9b4ca}body[data-theme="dark"] .tab-button.active{color:#dce6ff}body[data-theme="dark"] .smallbtn{background:#303b53;color:#e2e9f8;border-color:#52617b}body[data-theme="dark"] .smallbtn.yes{background:linear-gradient(135deg,#6e99ff,#4778f5);color:white}body[data-theme="dark"] .smallbtn.no,body[data-theme="dark"] .theme-switch{background:#30394d}body[data-theme="dark"] .theme-choice.active{background:#53678d;color:#fff}body[data-theme="dark"] .day{background:#ffffff08;border-color:#ffffff12}body[data-theme="dark"] .day.done{background:#1a493b88;border-color:#2c7059}body[data-theme="dark"] .day.no-money{background:#ffffff08}body[data-theme="dark"] .day-badge{background:linear-gradient(145deg,#3b4965,#29354d);color:#d5e1ff}body[data-theme="dark"] .done .day-badge{background:linear-gradient(145deg,#235d4a,#174332);color:#a5f2d2}body[data-theme="dark"] .progressline{background:#ffffff17}body[data-theme="dark"] .phone,body[data-theme="dark"] .logo{background:linear-gradient(145deg,#34425e,#222f49);box-shadow:inset 0 1px 0 #ffffff22,0 8px 22px #0002}body[data-theme="dark"] .modal{background:rgba(29,38,57,.96);border-color:#ffffff22}body[data-theme="dark"] .moneyfield{background:#182236;color:#f1f4fc;border-color:#46536b}body[data-theme="dark"] .cancel{background:#354159;color:#e2e9f8}body[data-theme="dark"] .daycount{background:#293858;color:#c7d7ff;border-color:#ffffff18}body[data-theme="dark"] .future{border-color:#45516a;background:#ffffff05}
+@media(prefers-reduced-motion:reduce){.tab-panel{animation:none}.taskbar-indicator,.tab-button,.toggle-track,.toggle-track:after{transition:none}}
+
 </style>
 </head>
 <body>
 <main class="app">
-  <div class="top"><div class="brand"><div class="logo">✦</div><span>Quỹ của tôi</span></div><div class="pill">LIQUID GLASS · 01</div></div>
-  <h1>Mỗi ngày một chút.<br>Chạm tới Xiaomi.</h1>
-  <p class="sub">Điểm danh tiết kiệm mỗi ngày để dành cho chiếc Redmi Note 15 Pro 5G của bạn.</p>
-
-  <section class="glass hero">
-    <div class="hero-head"><div><div class="eyebrow">Tổng tiền đã góp</div><div class="total" id="total">0 ₫</div><div class="goal">Mục tiêu quỹ: <strong>8.000.000 ₫</strong></div></div><div class="phone" aria-hidden="true">📱</div></div>
-    <div class="progressline"><div class="progress" id="progress"></div></div>
-    <div class="stats"><span id="percent">0% hoàn thành</span><span>Còn <strong id="remaining">8.000.000 ₫</strong></span></div>
+  <div class="top"><div class="brand"><div class="logo">✦</div><span>Quỹ Xiaomi</span></div><div class="pill">LIQUID GLASS · 02</div></div>
+  <section class="tab-panel active" id="tab-contribute" data-panel="contribute">
+    <h1>Mỗi ngày một chút.<br>Chạm tới Xiaomi.</h1>
+    <p class="sub">Điểm danh tiết kiệm mỗi ngày để dành cho chiếc Redmi Note 15 Pro 5G của bạn.</p>
+    <div class="sectionhead"><div><h2>Hành trình tiết kiệm</h2><p>Góp tiền hoặc chọn “Không” cho hôm nay.</p></div><div class="daycount" id="dayCount">Ngày 1</div></div>
+    <section class="glass list-shell"><div class="day-list" id="dayList" aria-label="Danh sách ngày tiết kiệm"></div></section>
+    <div class="footer">Dữ liệu được lưu trên trình duyệt này · Made for your next phone ✦</div>
   </section>
-
-  <section class="summary">
-    <div class="glass mini"><span class="mini-icon">📅</span><div class="mini-label">Ngày đã điểm danh</div><div class="mini-val" id="daysDone">0 ngày</div></div>
-    <div class="glass mini"><span class="mini-icon">✨</span><div class="mini-label">Trung bình mỗi ngày</div><div class="mini-val" id="average">0 ₫</div></div>
+  <section class="tab-panel" id="tab-progress" data-panel="progress">
+    <h1>Tiến trình của bạn</h1><p class="sub">Mỗi khoản tiết kiệm đưa bạn gần hơn đến chiếc điện thoại mới.</p>
+    <section class="glass hero">
+      <div class="hero-head"><div><div class="eyebrow">Tổng tiền đã góp</div><div class="total" id="total">0 ₫</div><div class="goal">Mục tiêu quỹ: <strong>6.000.000 ₫</strong></div></div><div class="phone" aria-hidden="true">📱</div></div>
+      <div class="progressline"><div class="progress" id="progress"></div></div>
+      <div class="stats"><span id="percent">0% hoàn thành</span><span>Còn <strong id="remaining">6.000.000 ₫</strong></span></div>
+    </section>
+    <section class="summary"><div class="glass mini"><span class="mini-icon">📅</span><div class="mini-label">Ngày đã điểm danh</div><div class="mini-val" id="daysDone">0 ngày</div></div><div class="glass mini"><span class="mini-icon">✨</span><div class="mini-label">Trung bình mỗi ngày</div><div class="mini-val" id="average">0 ₫</div></div></section>
+    <section class="glass progress-note"><div class="eyebrow">Mục tiêu</div><h2>Redmi Note 15 Pro 5G</h2><p>Quỹ sẽ tự cập nhật mỗi khi bạn ghi nhận khoản góp hoặc chỉnh sửa ngày đã lưu.</p></section>
   </section>
-
-  <div class="sectionhead"><div><h2>Hành trình tiết kiệm</h2><p>Góp tiền hoặc chọn “Không” cho hôm nay.</p></div><div class="daycount" id="dayCount">Ngày 1</div></div>
-  <section class="glass list-shell">
-    <div class="day-list" id="dayList" aria-label="Danh sách ngày tiết kiệm"></div>
+  <section class="tab-panel" id="tab-settings" data-panel="settings">
+    <h1>Cài đặt</h1><p class="sub">Tuỳ chỉnh giao diện theo sở thích của bạn.</p>
+    <section class="glass setting-card"><div class="setting-copy"><strong>Giao diện</strong><span>Chọn chế độ sáng hoặc tối</span></div><div class="theme-switch" role="group" aria-label="Chọn giao diện"><button type="button" class="theme-choice active" data-theme-choice="light">☀️ Sáng</button><button type="button" class="theme-choice" data-theme-choice="dark">🌙 Tối</button></div></section>
+    <section class="glass setting-card"><div class="setting-copy"><strong>Phản hồi vật lý</strong><span>Rung nhẹ khi thiết bị hỗ trợ</span></div><label class="toggle"><input type="checkbox" id="hapticsToggle" checked><span class="toggle-track"></span></label></section>
+    <section class="glass setting-card"><div class="setting-copy"><strong>Dữ liệu tiết kiệm</strong><span>Dữ liệu lưu cục bộ trên trình duyệt này.</span></div><span class="setting-icon">🔒</span></section>
+    <div class="footer">Quỹ Xiaomi · Phiên bản 2.0</div>
   </section>
-  <div class="footer">Dữ liệu được lưu trên trình duyệt này · Made for your next phone ✦</div>
 </main>
+<nav class="taskbar" aria-label="Điều hướng chính"><div class="taskbar-indicator" id="taskbarIndicator"></div><button class="tab-button active" data-tab="contribute" type="button"><span class="tab-icon">＋</span><span>Góp tiền</span></button><button class="tab-button" data-tab="progress" type="button"><span class="tab-icon">◔</span><span>Tiến trình</span></button><button class="tab-button" data-tab="settings" type="button"><span class="tab-icon">⚙</span><span>Cài đặt</span></button></nav>
 
 <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <form class="modal" id="moneyForm">
@@ -56,7 +72,7 @@ h1{font-size:clamp(29px,7vw,40px);letter-spacing:-1.4px;line-height:1.08;margin:
 <div class="toast" id="toast" role="status"></div>
 <script>
 (() => {
-  const GOAL = 8000000;
+  const GOAL = 6000000;
   const KEY = 'xiaomi_savings_attendance_v1';
   const $ = id => document.getElementById(id);
   let data = loadData();
@@ -196,6 +212,38 @@ h1{font-size:clamp(29px,7vw,40px);letter-spacing:-1.4px;line-height:1.08;margin:
     const tick=()=>{if(Math.abs(v)<.25)return;scroller.scrollTop+=v;v*=.92;raf=requestAnimationFrame(tick);};
     raf=requestAnimationFrame(tick);
   },{passive:true});
+  // Navigation with a sliding Liquid Glass indicator.
+  const tabButtons = [...document.querySelectorAll('.tab-button')];
+  const indicator = $('taskbarIndicator');
+  function selectTab(name, feedback=true) {
+    const index = tabButtons.findIndex(b=>b.dataset.tab===name);
+    if(index<0)return;
+    tabButtons.forEach(b=>b.classList.toggle('active',b.dataset.tab===name));
+    document.querySelectorAll('.tab-panel').forEach(p=>p.classList.toggle('active',p.dataset.panel===name));
+    indicator.style.transform = `translateX(calc(${index} * (100% + 4px)))`;
+    if(feedback) tactile();
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  function tactile(){
+    if(!$('hapticsToggle')?.checked)return;
+    if(navigator.vibrate) { try { navigator.vibrate(12); } catch {} }
+    const active=document.activeElement;
+    if(active && active.matches('button')) { active.classList.remove('tap-bump'); void active.offsetWidth; active.classList.add('tap-bump'); }
+  }
+  tabButtons.forEach(b=>b.addEventListener('click',()=>selectTab(b.dataset.tab)));
+  document.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{
+    if(b.classList.contains('tab-button'))return;
+    if($('hapticsToggle')?.checked && navigator.vibrate){try{navigator.vibrate(8)}catch{}}
+  }));
+  const THEME_KEY='xiaomi_savings_theme_v1';
+  function applyTheme(theme){
+    document.body.dataset.theme=theme;
+    document.querySelectorAll('[data-theme-choice]').forEach(b=>b.classList.toggle('active',b.dataset.themeChoice===theme));
+    const meta=document.querySelector('meta[name="theme-color"]'); if(meta)meta.content=theme==='dark'?'#111827':'#eef2f8';
+    try{localStorage.setItem(THEME_KEY,theme)}catch{}
+  }
+  document.querySelectorAll('[data-theme-choice]').forEach(b=>b.addEventListener('click',()=>{applyTheme(b.dataset.themeChoice);tactile();showToast('Đã chuyển giao diện '+(b.dataset.themeChoice==='dark'?'tối':'sáng')+'.')}));
+  try{applyTheme(localStorage.getItem(THEME_KEY)==='dark'?'dark':'light')}catch{applyTheme('light')}
   render();
 })();
 </script>
