@@ -163,9 +163,10 @@ h1{font-size:clamp(29px,7vw,40px);letter-spacing:-1.4px;line-height:1.08;margin:
     save(); render(); showToast('Đã ghi nhận ngày không góp tiền.');
     const list = $('dayList'); list.scrollTo({top:list.scrollHeight,behavior:'smooth'});
   }
+  // Không tự chèn dấu phân cách khi đang gõ vì con trỏ có thể nhảy vị trí
+  // và làm số tiền bị nhân đôi trên một số trình duyệt.
   $('moneyInput').addEventListener('input', e => {
-    const digits = e.target.value.replace(/\D/g,'');
-    e.target.value = digits ? new Intl.NumberFormat('vi-VN').format(Number(digits)) : '';
+    e.target.value = e.target.value.replace(/[^\d.]/g, '');
   });
   $('moneyForm').addEventListener('submit', e => {
     e.preventDefault();
